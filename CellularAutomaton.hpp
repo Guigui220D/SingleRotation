@@ -54,12 +54,19 @@ class CellularAutomaton
 
         /**
          * Gets a reference to the state at a position
-         * @param x and y : the coordinates (must be withing the dimensions of the grid)
+         * The coordinates are looped if they are out of the grid
+         * @param x and y : the coordinates
         */
         inline uint8_t& cellStateAt(unsigned int x, unsigned int y)
         {
-            assert(x < WIDTH);
-            assert(y < HEIGHT);
+            while (x < 0)
+                x += WIDTH;
+            while (y < 0)
+                y += HEIGHT;
+            while (x >= WIDTH)
+                x -= WIDTH;
+            while (y >= HEIGHT)
+                y -= HEIGHT;
             return states[x + y * WIDTH];
         }
         /**

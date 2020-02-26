@@ -1,3 +1,3 @@
-# Cellular automaton engine
+# Single Rotation Cellular Automaton
 
-This is a base class for easily creating cellular automata. Uses SFML 2.5.1.
+I made this for a little project fo my programming discord community, Bonjour Le Monde
